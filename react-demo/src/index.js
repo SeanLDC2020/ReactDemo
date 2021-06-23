@@ -22,7 +22,7 @@ class Lineup extends React.Component {
         <table><tr>
             {players.map((player, index) => (
                 <td>
-                    <div><img src={`./assets/headshots/${player.last_name}.png`} alt={player.last_name}/></div>
+                    <div><img class="headshot" src={ require("./assets/headshots/"+player.last_name+".png").default } alt={player.last_name} /></div>
                     <div>{player.last_name}</div>
                     <div>{player.points}</div>
                     <div>PTS</div>
@@ -36,34 +36,36 @@ class Lineup extends React.Component {
 class Game extends React.Component {
   render() {
     return (
-      <div className="background">
+      <div class="background">
         <LogoImg />
-        <div className="content-frame">
+        <div class="content-frame">
             <ProgressBar />
-            <div className="game-status">
+            <div class="game-status">
                 <h1>YOUR PLAYLINE IS SET!</h1>
                 <h2>COME BACK @ 7:30PM TO TRACK IT LIVE!</h2>
             </div>
-            <div className="protip">
+            <div class="protip">
                 Pro Tip: You can manage your PlayLine's until they go live in the Upcoming area
             </div>
-            <Lineup />
-            <div className="management-buttons">
-                <button className="notify-me-button">
+            <center>
+                <Lineup />
+            </center>
+            <div class="management-buttons">
+                <button class="notify-me-button">
                     <NotifyMeImg />
                     NOTIFY ME
                 </button>
-                <button className="deposit-button">
+                <button class="deposit-button">
                     <MoneyBagImg />
                     DEPOSIT
                 </button>
             </div>
-            <div className="app-download-plug">
+            <div class="app-download-plug">
                 <h2>DOWNLOAD THE APP</h2>
                 <IosAppImg /><GooglePlayImg />
             </div>
         </div>
-        <div className="game-info">
+        <div class="game-info">
         </div>
       </div>
     );
